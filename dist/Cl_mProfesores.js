@@ -33,6 +33,15 @@ export class Cl_mProfesores {
     get materia() {
         return this._materia;
     }
+    materiaSeleccionada() {
+        if (this.materia === "M")
+            return "Matematicas";
+        if (this.materia === "F")
+            return "Fisica";
+        if (this.materia === "Q")
+            return "Quimica";
+        return "Otras";
+    }
     error() {
         // Validacion de cedula
         if (this._cedula.length === 0)
@@ -51,7 +60,7 @@ export class Cl_mProfesores {
             nombre: this._nombre,
             cedula: this._cedula,
             codigo: this._codigo,
-            materia: this._materia
+            materia: this.materiaSeleccionada()
         };
     }
 }
