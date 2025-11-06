@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página y de la vista previa (WhatsApp) -->
+    <title>HyperLinkBlocked</title>
+    <meta property="og:title" content="Instituto Educativo" />
+    <!-- Descripción corta y atractiva -->
+    <meta property="og:description" content="Instituto Educativo <DCyT UCLA>" />
+    <!-- Imagen que se muestra en WhatsApp (logo o imagen destacada, 800x418 px recomendado) -->
+    <meta property="og:image" content="https://HyperLinkBlocked_Instituto-Educativo.vercel.app/resource/logo.png" />
+    <!-- URL del proyecto -->
+    <meta property="og:url" content="https://HyperLinkBlocked_Instituto-Educativo.vercel.app" />
+    <!-- Tipo de contenido -->
+    <meta property="og:type" content="website" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./resource/Favicon.png">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style.css?v251103-1750" />
+    
+</head>
+
+<body>
+    <h2>INSTITUTO EDUCATIVO</h2>
+    <section id="instituto">
+        <div>
+            <button id="instituto_btAgregarProfesor">Agregar Profesor</button>
+        </div>
+    </section>
+    <section style="font-size: 13px;">
+        <h3 style="font-size: 14px;">PROFESORES REGISTRADOS</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 200px;">Nombre</th>
+                    <th style="width: 80px;">Cedula</th>
+                    <th style="width: 80px;">Codigo de Aula</th>
+                    <th style="width: 80px;">Materia</th>
+                </tr>
+            </thead>
+            <tbody id="instituto_divProfesoresRegistrados"> </tbody>
+        </table>
+    </section>
+    <script type="module">
+        import main from "./dist/Main.js";
+        new main();
+    </script>
+</body>
+
+</html>

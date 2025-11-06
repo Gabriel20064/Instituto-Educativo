@@ -1,0 +1,297 @@
+:root {
+            --primary-color: #5C6BC0;
+            --primary-dark: #3F51B5;
+            --accent-color: #07b9ff;
+            --accent-dark: #FF9800;
+            --background-light: #F5F7FA;
+            --background-white: #FFFFFF;
+            --text-dark: #2E3A59;
+            --text-light: #5A6A8C;
+            --border-color: #C5CAE9;
+            --border-light: #E8EAF6;
+            --button-bg: #7986CB;
+            --button-text: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            background-color: var(--background-white);
+            box-shadow: var(--shadow);
+            margin: 25px auto;
+            padding: 25px;
+            max-width: 900px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        section:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-size: 1.3em;
+            margin: 20px 0 15px;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h4 {
+            margin: 12px 0 6px;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: 500;
+            color: var(--text-dark);
+            display: block;
+        }
+
+        button {
+            margin-top: 15px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 10px 18px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.95em;
+            transition: var(--transition);
+            background-color: var(--background-white);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid var(--border-light);
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            font-weight: 500;
+            position: relative;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(245, 247, 250, 0.5);
+        }
+
+        tr:hover {
+            background-color: rgba(197, 202, 233, 0.2);
+        }
+
+        .colCurrency {
+            text-align: right;
+            padding-right: 15px;
+            font-family: 'Courier New', monospace;
+            font-weight: 500;
+        }
+
+        .colNumber {
+            column-width: 60px;
+            text-align: center;
+        }
+
+        #institutoForm {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 280px;
+            padding: 20px;
+            background-color: var(--background-light);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        #mainForm {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            background-color: var(--background-light);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        .divSalida {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            background-color: var(--background-white);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-light);
+            margin-top: 15px;
+        }
+
+        .card {
+            background-color: var(--background-white);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin: 15px 0;
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 15px;
+                margin: 15px auto;
+            }
+            
+            #institutoForm, #mainForm {
+                width: 100%;
+            }
+            
+            input, select, textarea {
+                max-width: 100%;
+            }
+        }
