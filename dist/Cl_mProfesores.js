@@ -1,4 +1,4 @@
-export class Cl_mProfesores {
+export default class Cl_mProfesores {
     constructor({ nombre, cedula, codigo, materia }) {
         this._nombre = "";
         this._cedula = "";

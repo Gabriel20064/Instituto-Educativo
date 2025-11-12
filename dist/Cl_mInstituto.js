@@ -22,6 +22,7 @@ export default class Cl_mInstituto {
             return;
         }
         this.instituto.push(profesor);
+        localStorage.setItem("Instituto", JSON.stringify(this.listar()));
         callback(false);
     }
     listar() {

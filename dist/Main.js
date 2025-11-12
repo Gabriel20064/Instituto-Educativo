@@ -11,13 +11,26 @@ Todos los campos son obligatorios para cada profesor.
 */
 import Cl_Controlador from "./Cl_Controlador.js";
 import Cl_mInstituto from "./Cl_mInstituto.js";
+import Cl_mProfesores from "./Cl_mProfesores.js";
 import Cl_vInstituto from "./Cl_vInstituto.js";
-export default class main {
+export default class Cl_index {
     constructor() {
         this.modelo = new Cl_mInstituto();
+        let profesoresLS = localStorage.getItem("Instituto");
+        if (profesoresLS) {
+            let profesoresDT = JSON.parse(profesoresLS);
+            profesoresDT.forEach((profesor) => {
+                this.modelo.agregarProfesor({
+                    profesor: new Cl_mProfesores(profesor),
+                    callback: (error) => {
+                        // Ignorar errores al cargar desde localStorage
+                    },
+                });
+            });
+        }
         this.vista = new Cl_vInstituto();
-        this.controlador = new Cl_Controlador(this.modelo, this.vista);
-        this.vista.controlador = this.controlador;
+        let controlador = new Cl_Controlador(this.modelo, this.vista);
+        this.vista.controlador = controlador;
         this.vista.refresh();
     }
 }

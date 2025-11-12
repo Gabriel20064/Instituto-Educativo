@@ -1,4 +1,4 @@
-import {Cl_mProfesores, iProfesores } from "./Cl_mProfesores.js"; 
+import Cl_mProfesores, { iProfesores } from "./Cl_mProfesores.js"; 
 import Cl_mInstituto from "./Cl_mInstituto.js";
 import Cl_vInstituto from "./Cl_vInstituto.js"
 

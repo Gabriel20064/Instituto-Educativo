@@ -5,7 +5,7 @@ export interface iProfesores {
     materia: string;
 }   
 
-export class Cl_mProfesores {
+export default class Cl_mProfesores {
         protected _nombre: string = "";
         protected _cedula: string = "";
         protected _codigo: string = "";

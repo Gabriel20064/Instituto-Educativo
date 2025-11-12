@@ -1,4 +1,4 @@
-import {Cl_mProfesores,iProfesores} from "./Cl_mProfesores.js";
+import Cl_mProfesores, {iProfesores} from "./Cl_mProfesores.js";
 
 export default class Cl_mInstituto{
     private instituto: Cl_mProfesores[] = [];
@@ -28,6 +28,7 @@ export default class Cl_mInstituto{
             return;
         }
         this.instituto.push(profesor);
+        localStorage.setItem("Instituto", JSON.stringify(this.listar()));
         callback(false);
     }
     listar(): iProfesores[]{

@@ -1,4 +1,4 @@
-import { Cl_mProfesores } from "./Cl_mProfesores.js";
+import Cl_mProfesores from "./Cl_mProfesores.js";
 export default class Cl_Controlador {
     constructor(modelo, vista) {
         this.modelo = modelo;
